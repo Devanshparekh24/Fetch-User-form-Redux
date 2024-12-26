@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Menu, Home, Users } from "lucide-react";
 import { Navitems } from "./NavItems";
 import UserData from "./UserData";
-import Dry from "./Dry";
+// import Dry from "./Dry";
 const Sidebar = () => {
   const [isExpanded, setIsExpanded] = useState(true);
   const [activeAccordions, setActiveAccordions] = useState({
@@ -19,7 +19,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="min-h-screen flex">
+    <div className=" flex">
       {/* Sidebar */}
       <div
         className={`${
@@ -31,7 +31,7 @@ const Sidebar = () => {
           <button
             type="button"
             onClick={() => setIsExpanded(!isExpanded)}
-            className="p-2 rounded-e bg-white border border-gray-200 border-s-0 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:bg-neutral-800 dark:border-neutral-700 dark:hover:bg-neutral-700"
+            className="p-2 rounded-e bg-white border border-gray-200 border-s-0 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:bg-neutral-700 dark:border-neutral-700 dark:hover:bg-neutral-700"
             aria-label="Toggle navigation"
           >
             <Menu className="w-4 h-4" />
@@ -119,17 +119,7 @@ const Sidebar = () => {
       </div>
 
       {/* Main Content */}
-      <div
-        className={`flex-1 transition-all duration-300 ${
-          isExpanded ? "ml-64" : "ml-16"
-        }`}
-      >
-        {/* Your main content goes here */}
-        <div className="p-8">
-          <Dry />
-          <p>Your content goes here...</p>
-        </div>
-      </div>
+      
     </div>
   );
 };
