@@ -1,5 +1,5 @@
 import React, { createContext, useState } from "react";
-
+import { ThemeProvider } from "./theme";
 // Create Context
 export const ModalContext = createContext();
 
@@ -19,8 +19,10 @@ export const ModalProvider = ({ children }) => {
   };
 
   return (
-    <ModalContext.Provider value={{ isModalOpen, modalData, openModal, closeModal }}>
-      {children}
-    </ModalContext.Provider>
+      <ModalContext.Provider
+        value={{ isModalOpen, modalData, openModal, closeModal }}
+      >
+        {children}
+      </ModalContext.Provider>
   );
 };

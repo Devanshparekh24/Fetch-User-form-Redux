@@ -1,14 +1,31 @@
 import React from "react";
+import useTheme from "./contexts/theme";
+import { LuSunMoon } from "react-icons/lu";
+
 
 function Themebtn() {
+  const{themeMode,darkTheme,lightTheme}=useTheme()
+  const onchangeBtn = () => {
+    if(themeMode==='dark'){
+      lightTheme()
+
+    }else{
+      darkTheme()
+    }
+  };
   return (
     <>
+    <div>
       <button
         type="button"
-        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
-      >
-        Mode
+        // checked={themeMode=="dark"}
+        onClick={onchangeBtn}
+        >
+        <LuSunMoon size={25}/>
+          
       </button>
+
+    </div>
     </>
   );
 }
